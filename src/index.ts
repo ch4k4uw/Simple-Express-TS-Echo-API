@@ -1,9 +1,8 @@
 import * as Express from "express";
 import * as Cors from "cors";
 import * as BodyParser from "body-parser";
-import { resolve } from "path";
 
-const port = 10003;
+const port = process.env.PORT || 10003;
 const app: Express.Express = Express();
 
 async function performDelay(ms: number): Promise<void>;
@@ -35,7 +34,7 @@ function handle(
     }
 }
 
-var router = Express.Router();
+const router = Express.Router();
 app.use(Cors());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
@@ -123,6 +122,6 @@ router.use(async (_req, res, _next) => {
     res.status(404).send({ error: 'Not Found' });
 });
 
-app.listen(10003, () => {
+app.listen(port, () => {
     console.log(`Listening on ${port} port`);
 });
