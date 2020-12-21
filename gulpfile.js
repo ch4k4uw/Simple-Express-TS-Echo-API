@@ -2,10 +2,7 @@
 
 const gulp = require('gulp');
 const rimraf = require('gulp-rimraf');
-const tslint = require('gulp-tslint');
-const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
-const env = require('gulp-env');
 
 gulp.task('clean', function () {
 	return gulp.src('./build', { read: false })
