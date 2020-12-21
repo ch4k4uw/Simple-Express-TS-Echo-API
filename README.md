@@ -15,12 +15,12 @@ $ npm run start
 
 
 
-**"No no, I want to change to add more intelligence"**
+**"No no, I want to change to add more intelligence"**  
 Ok, it's a so simple API, you just need to change the `index.ts` e everything will work as you can.
 
 
 
-**"But I don't have enough time to spend with `npm build` and `npm start`"**
+**"But I don't have enough time to spend with `npm build` and `npm start`"**  
 Ok ok, no problem... Just start the watch and the nodemon with the following commands:
 
 ```sh
@@ -28,13 +28,12 @@ $ npm run tsc-watch
 $ npm run watch
 ```
 
-**"But what is the host and port where this API will run on?"**
+**"But what is the host and port where this API will run on?"**  
 On your localhost, at `10003` port
 
 
 
-**"But does it have any feature on this?"**
-
+**"But does it have any feature on this?"**  
 Oh yeah, I was almost forgetting... You can send a request with query string `delay` to simulate some delays on the API responses.
 
 
