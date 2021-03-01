@@ -20,6 +20,8 @@ async function performDelay(req: Express.Request | number): Promise<void> {
         const delay = <number>(<any>(nreq.query || {}).delay || <any>(nreq.body || {}).delay);
         if (delay) {
             return await performDelay(+delay);
+        } else {
+            return await performDelay(0);
         }
     }
 }
@@ -43,6 +45,10 @@ app.use(router);
 router.use(async (req, _res, next) => {
     console.log(`${req.method}: ${req.path}\t${new Date()}`);
     try {
+        console.log('\x1b[90m\n%s', req.headers);
+        console.log('\n\n\x1b[32m%s', req.query);
+        console.log('\n\n\x1b[34m%s', req.body);
+        console.log('\n\n\x1b[0m');
         await performDelay(req);
         next();
     } catch (e) {
