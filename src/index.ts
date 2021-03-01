@@ -45,9 +45,9 @@ app.use(router);
 router.use(async (req, _res, next) => {
     console.log(`${req.method}: ${req.path}\t${new Date()}`);
     try {
-        console.log('\x1b[90m\n%s', req.headers);
-        console.log('\n\n\x1b[32m%s', req.query);
-        console.log('\n\n\x1b[34m%s', req.body);
+        console.log('\x1b[90m\n%s', JSON.stringify(req.headers));
+        console.log('\n\n\x1b[32m%s', JSON.stringify(req.query));
+        console.log('\n\n\x1b[34m%s', JSON.stringify(req.body));
         console.log('\n\n\x1b[0m');
         await performDelay(req);
         next();
